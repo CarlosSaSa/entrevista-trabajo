@@ -1,0 +1,22 @@
+.libro-seleccionado {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+    & p {
+        margin: 5px 0;
+    }
+
+    & .card {
+        width: 90%;
+        padding: 20px 10px;
+        background-color: #0049B7;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+        color: #fff;
+    }
+
+}

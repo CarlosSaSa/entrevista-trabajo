@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div *ngIf="libros.length <= 0 && !isLoadingData" class="col-12">
+      <div class="alert alert-danger " role="alert"> Sin libros que mostrar </div>
+    </div>
+
+    <div *ngIf="libros.length > 0 && !isLoadingData" class="col-12" >
+      <table class="table table-bordered align-middle">
+        <thead class="text-center">
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Año</th>
+            <th scope="col">Autor</th>
+            <th scope="col">Ver información</th>
+          </tr>
+        </thead>
+        <tbody class="text-center">
+          <tr *ngFor="let item of libros">
+            <td>{{ item.nombre }}</td>
+            <td>{{ item.anio }}</td>
+            <td>{{ item.autor }}</td>
+            <td> <a [routerLink]="['/informacion-libro/', item.libro_id ]" class="btn btn-success"> <i
+                  class="fa-solid fa-circle-info"></i> </a> </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+  </div>
+</div>
+
+<!-- Si no hay datos de libros entonces mostramos un mensaje -->

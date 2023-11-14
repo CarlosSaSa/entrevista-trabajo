@@ -1,0 +1,31 @@
+<!-- Formulario -->
+<div class="container" style="margin-top: 80px;">
+    <div class="row">
+        <div class="col-12">
+            <form [formGroup]="librosForm" (ngSubmit)="ingresarLibro()">
+                <div class="mb-3">
+                    <label for="nombre_libro" class="form-label"> Nombre del libro: </label>
+                    <input type="text" formControlName="nombre" class="form-control" id="nombre_libro" placeholder="Nombre del libro">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="anio" class="form-label">Año del libro: </label>
+                    <input type="text" formControlName="anio" class="form-control" id="anio" placeholder="Nombre del libro">
+                </div>
+
+                <div class="mb-3">
+                    <label for="autor" class="form-label"> Autor del libro: </label>
+                    <input type="text" formControlName="autor" class="form-control" id="autor" placeholder="Nombre del libro">
+                </div>
+
+                <!-- Boton de submit -->
+                <button type="submit" class="btn btn-primary" [disabled]="librosForm.invalid"> Ingresar </button>
+            </form>
+        </div>
+
+        <div *ngIf="mensajeServer" class="col-12 my-3">
+            <div class="alert" [ngClass]=" responseType == 'success' ? 'alert-success' : 'alert-danger' " role="alert"> {{ mensajeServer }} </div>
+        </div>
+
+    </div>
+</div>

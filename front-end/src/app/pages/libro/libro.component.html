@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+        <div *ngIf="isLoadingInformacion" class="col-12">
+            <p> Cargando información ... </p>    
+        </div>
+
+        <div *ngIf="!isLoadingInformacion && !libro"  class="col-12">
+            <div class="alert alert-danger" role="alert">  No existe información del libro seleccionado </div>
+        </div>
+
+        <div *ngIf="!isLoadingInformacion && libro" class="col-12 libro-seleccionado">
+            <p class="my-3 fw-bold"> Información del libro seleccionado </p>
+            <div class="card">
+                <p> <span class="fw-bold"> Nombre: </span> {{ libro.nombre }} </p>
+                <p> <span class="fw-bold"> Año: </span> {{ libro.anio }} </p>
+                <p> <span class="fw-bold"> Autor: </span> {{ libro.autor }} </p>
+            </div>
+        </div>
+
+    </div>
+</div>
